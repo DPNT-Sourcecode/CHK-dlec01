@@ -4,6 +4,17 @@ import befaster.runner.SolutionNotImplementedException;
 
 public class CheckoutSolution {
     public Integer checkout(String skus) {
+
+
         throw new SolutionNotImplementedException();
     }
+
+    private int calculateStringValue(String str){
+        int totalValue = 0;
+
+        for(int i=0; i<str.length(); i++){
+            char letter = str.charAt(i);
+        }
+    }
 }
+
