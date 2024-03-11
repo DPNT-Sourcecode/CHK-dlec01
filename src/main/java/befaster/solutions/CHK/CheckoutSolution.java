@@ -27,6 +27,7 @@ public class CheckoutSolution {
                     break;
                 case'B':
                     totalValue+=30;
+                    countB++;
                     if(countB==2){
                         countB=0;
                         totalValue -=15;
@@ -46,6 +47,7 @@ public class CheckoutSolution {
         return totalValue;
     }
 }
+
 
 
 
