@@ -56,30 +56,40 @@ public class CheckoutSolution {
 
     private int eBPromotion(int countE, int countB){
         int countOfFreeB =countE/2;
-        while(countB>=1){
-            if(countOfFreeB>0){
-                countB--;
-                countOfFreeB--;
-            }
-        }
 
-        int evenB = countB/2;
-        return evenB*15;
+
+
+        int numOfDiscountedB = Math.min(countOfFreeB,countB);
+
+        return numOfDiscountedB*30;
+//        return evenB*15;
 
     }
 
     private int calulateDiscounts(int countA){
         int totalDiscountValue=0;
-        while(countA>=5){
-            totalDiscountValue+=50;
-            countA-=5;
+        int numOfDiscount5=0;
+        int numOfDiscount3=0;
+        //Check how many times we can apply discount
+        if(countA%5==0){
+            numOfDiscount5 +=countA/5;
+            countA%=5;
+
+            if(countA%3==0){
+                numOfDiscount3+=countA/3;
+            }
+        }else if(countA%3==0){
+            numOfDiscount3+=countA;
         }
-        while (countA>=3){
-            totalDiscountValue+=20;
-            countA-=3;
+        if(numOfDiscount5>0){
+            totalDiscountValue+= numOfDiscount5*50;
         }
 
+        if(numOfDiscount3>0){
+            totalDiscountValue+= numOfDiscount3*20;
+        }
         return totalDiscountValue;
 
     }
 }
+
