@@ -4,9 +4,9 @@ import befaster.runner.SolutionNotImplementedException;
 
 public class CheckoutSolution {
     public Integer checkout(String skus) {
+         return calculateStringValue(skus);
 
 
-        throw new SolutionNotImplementedException();
     }
 
     private int calculateStringValue(String str){
@@ -14,7 +14,23 @@ public class CheckoutSolution {
 
         for(int i=0; i<str.length(); i++){
             char letter = str.charAt(i);
+            switch(letter){
+                case 'A':
+                    totalValue+=50;
+                    break;
+                case'B':
+                    totalValue+=30;
+                    break;
+                case 'C':
+                    totalValue+=20;
+                    break;
+                case 'D':
+                    totalValue+=35;
+
+            }
         }
+        return totalValue;
     }
 }
+
 
