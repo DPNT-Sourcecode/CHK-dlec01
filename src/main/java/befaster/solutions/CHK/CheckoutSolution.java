@@ -25,12 +25,16 @@ public class CheckoutSolution {
                     totalValue+=20;
                     break;
                 case 'D':
-                    totalValue+=35;
+                    totalValue+=15;
+                    break;
+                default:
+                    return -1;
 
             }
         }
         return totalValue;
     }
 }
+
 
 
